@@ -4,29 +4,10 @@
 #include <dt-bindings/zmk/bt.h>
 
 &inc_dec_kp {
-	triggers-per-rotation = <8>;
+	triggers-per-rotation = <4>;
 };
 &def_lshft {
-	triggers-per-rotation = <8>;
-};
-
-/ {
-    macros {
-        spotify_macro: spotify_macro {
-            label = "spotify_macro";
-            compatible = "zmk,keymap,behavior-macro";
-	    #binding-cells = <0>;
-            bindings
-                = <&kp LSHIFT &kp LCTRL>;
-        };
-	discord_macro: discord_macro {
-            label = "discord_macro";
-            compatible = "zmk,keymap,behavior-macro";
-	    #binding-cells = <0>;
-            bindings
-                = <&kp LALT &kp LCTRL>;
-        };
-    };
+	triggers-per-rotation = <4>;
 };
 
 / {
@@ -35,21 +16,31 @@
 
 		default_layer {
 			//PREV | PLAY/PAUSE | NEXT
-			bindings = <&spotify_macro &lt 4 F13 &discord_macro>;
+			bindings = <&kp C_MUTE &lt 4 F13 &kp C_PP>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 			ledoverride;
-			r = <255>;
-			g = <255>;
-			b = <0>;
+		    r = <150>;
+		    g = <0>;
+		    b = <150>;
 		};
 		one {
 			//PREV | PLAY/PAUSE | NEXT
 			bindings = <&kp C_PREV &lt 4 C_PP &kp C_NEXT>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-			ledoverride;
-			r = <0>;
-			g = <255>;
-			b = <255>;
+		};
+		two {
+			//PREV | PLAY/PAUSE | NEXT
+			bindings = <&kp LEFT &lt 4 SPACE &kp RIGHT>;
+			sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+		};
+		three {
+			//PREV | PLAY/PAUSE | NEXT
+			bindings = <&kp C_MUTE &lt 4 F13 &kp C_PP>;
+		};
+		shift {
+			//PREV | PLAY/PAUSE | NEXT
+			bindings = <&bt BT_CLR &trans &rgb_ug RGB_TOG>;
+			sensor-bindings = <&def_lshft>;
 		};
 	};
 };
