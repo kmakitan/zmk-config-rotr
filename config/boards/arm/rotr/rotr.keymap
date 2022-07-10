@@ -4,10 +4,24 @@
 #include <dt-bindings/zmk/bt.h>
 
 &inc_dec_kp {
-	triggers-per-rotation = <4>;
+	triggers-per-rotation = <8>;
 };
 &def_lshft {
-	triggers-per-rotation = <4>;
+	triggers-per-rotation = <8>;
+};
+
+/ {
+	macros {
+		spotify_macro: spotify_macro {
+			label = "spotify_macro";
+			bindings = <&kp LCTRL &kp LSHIFT>;
+		};
+
+		discord_macro: discord_macro {
+			label = "discord_macro";
+			bindings = <&kp LCTRL &kp LALT>;
+		};
+	};
 };
 
 / {
@@ -16,7 +30,7 @@
 
 		default_layer {
 			//PREV | PLAY/PAUSE | NEXT
-			bindings = <&kp C_MUTE &lt 4 F13 &kp C_PP>;
+			bindings = <&spotify_macro &lt 4 F13 &discord_macro>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 		};
 		one {
