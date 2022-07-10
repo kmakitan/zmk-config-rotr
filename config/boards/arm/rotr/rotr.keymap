@@ -39,7 +39,7 @@
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 			ledoverride;
 			r = <255>;
-			g = <0>;
+			g = <255>;
 			b = <0>;
 		};
 		one {
@@ -48,7 +48,7 @@
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 			ledoverride;
 			r = <0>;
-			g = <0>;
+			g = <255>;
 			b = <255>;
 		};
 	};
