@@ -11,23 +11,6 @@
 };
 
 / {
-    macros {
-        spotify_macro: spotify_macro {
-            label = "spotify_macro";
-            compatible = "zmk,keymap,behavior-macro";
-	    #binding-cells = <0>;
-            bindings
-                = <&kp LSHIFT &kp LCTRL>;
-        };
-	discord_macro: discord_macro {
-            label = "discord_macro";
-            compatible = "zmk,keymap,behavior-macro";
-	    #binding-cells = <0>;
-            bindings
-                = <&kp LALT &kp LCTRL>;
-        };
-    };
-
 	keymap {
 		compatible = "zmk,keymap";
 
