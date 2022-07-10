@@ -11,22 +11,16 @@
 };
 
 / {
-    macros {
-        spotify_macro: spotify_macro {
-            label = "spotify_macro";
-            compatible = "zmk,keymap,behavior-macro";
-	    #binding-cells = <0>;
-            bindings
-                = <&kp LSHIFT &kp LCTRL>;
-        };
-	discord_macro: discord_macro {
-            label = "discord_macro";
-            compatible = "zmk,keymap,behavior-macro";
-	    #binding-cells = <0>;
-            bindings
-                = <&kp LALT &kp LCTRL>;
-        };
-    };
+	macros {
+		my_macro: my_macro {
+		compatible = "zmk,behavior-macro";
+		label = "ZM_my_macro";
+		#binding-cells = <0>;
+		wait-ms = <30>;
+		tap-ms = <40>;
+		bindings = <&kp Z &kp M &kp K>;
+		};
+	};
 };
 / {
 	keymap {
