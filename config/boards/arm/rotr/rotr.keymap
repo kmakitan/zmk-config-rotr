@@ -28,7 +28,7 @@
 
 		default_layer {
 			//PREV | PLAY/PAUSE | NEXT
-			bindings = <&kp LCTRL &lt 2 F13 &kp LALT;
+			bindings = <&kp LCTRL &lt 2 F13 &kp LALT>;
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 			ledoverride;
 			r = <255>;
