@@ -22,9 +22,7 @@
 			bindings = <&kp LCTRL &kp LALT>;
 		};
 	};
-};
-
-/ {
+	
 	keymap {
 		compatible = "zmk,keymap";
 
