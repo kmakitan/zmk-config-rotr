@@ -27,9 +27,7 @@
                 = <&kp LALT &kp LCTRL>;
         };
     };
-};
 
-/ {
 	keymap {
 		compatible = "zmk,keymap";
 
